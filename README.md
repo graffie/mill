@@ -1,4 +1,4 @@
-# mill
+![mill](http://keydiary-assets.stor.sinaapp.com/mill-logo.png)
 
 Yet another lightweight article system, based on `GitHub`.
 
