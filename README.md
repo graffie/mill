@@ -1,2 +1,3 @@
 # mill
-Yet another blog system.
+
+Yet another article system, based on `GitHub`.
