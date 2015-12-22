@@ -1,6 +1,6 @@
 {
   "name": "mill",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Yet another blog system.",
   "scripts": {
     "clean": "rm -f mill.min.*",
@@ -33,14 +33,14 @@
     "webpack": "~1.12.9",
     "webpack-dev-server": "^1.14.0"
   },
-  "homepage": "https://github.com/rockdai/mill",
+  "homepage": "https://github.com/theorangeclock/mill",
   "repository": {
     "type": "git",
-    "url": "git@github.com:rockdai/mill.git",
-    "web": "https://github.com/rockdai/mill"
+    "url": "git@github.com:theorangeclock/mill.git",
+    "web": "https://github.com/theorangeclock/mill"
   },
   "bugs": {
-    "url": "https://github.com/rockdai/mill/issues",
+    "url": "https://github.com/theorangeclock/mill/issues",
     "email": "rockdai321@gmail.com"
   },
   "license": "MIT"
