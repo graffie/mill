@@ -1,7 +1,7 @@
 window.MillConfig = {
-  title: 'rockdai.github.io',
+  title: 'theorangeclock.github.io',
   github: {
-    owner: 'rockdai',
-    repo: 'rockdai.github.io'
+    owner: 'theorangeclock',
+    repo: 'theorangeclock.github.io'
   }
 };

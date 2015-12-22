@@ -1,8 +1,7 @@
-/**!
- * mill - webpack.config.js
- *
- * Authors:
- *   rockdai <rockdai@qq.com>
+/*
+ * mill - webpack.config.production.js
+ * Copyright(c) 2015 xeodou <xeodou@gmail.com>
+ * MIT Licensed
  */
 
 'use strict';
@@ -16,19 +15,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  devtool: 'cheap-module-eval-source-map',
-  entry: {
-    app: [
-      'webpack-dev-server/client?http://localhost:4000',
-      'webpack/hot/only-dev-server',
-      path.resolve(__dirname, './src/app')
-    ],
-    vendors: ['react', 'react-router']
-  },
+  devtool: 'source-map',
+  entry: './src/app.js',
   output: {
-    filename: 'mill.js',
+    filename: '[name].min.js',
     path: path.join(__dirname, 'dist'),
-    publicPath: 'http://localhost:4000/assets/'
+    publicPath: './'
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
@@ -48,15 +40,15 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('development')
+        'NODE_ENV': JSON.stringify('production')
       },
-      '__DEVTOOLS__': true
+      '__DEVTOOLS__': false
     }),
     new HtmlWebpackPlugin({
       title: 'Mill blog',
       filename: 'index.html',
       template: path.resolve(__dirname, 'index.html')
-      // favicon: path.join(__dirname, 'assets', 'images', 'favicon.ico')
+        // favicon: path.join(__dirname, 'assets', 'images', 'favicon.ico')
     }),
     new CopyWebpackPlugin([{
       from: './config.js'
