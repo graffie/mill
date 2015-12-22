@@ -10,7 +10,7 @@
     "predist": "npm run clean",
     "dist": "webpack --progress --colors --config webpack.config.production.js",
     "predeploy": "npm run dist",
-    "deploy": "./node_modules/.bin/gh-pages --dist dist --src !*.map",
+    "deploy": "./node_modules/.bin/gh-pages --dist dist --src '!(*.map)'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

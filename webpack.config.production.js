@@ -18,7 +18,7 @@ module.exports = {
   devtool: 'source-map',
   entry: './src/app.js',
   output: {
-    filename: '[name].min.js',
+    filename: 'mill.min.js',
     path: path.join(__dirname, 'dist'),
     publicPath: './'
   },
@@ -28,16 +28,17 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.js|jsx$/,
-      exclude: /(node_modules|bower_components)/,
+      exclude: /(node_modules\/(?!qs)|bower_components)/,
       loader: 'babel',
       query: {
         presets: ['react', 'es2015', 'stage-0'],
       },
-    }],
+    }]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
+    new webpack.optimize.UglifyJsPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
@@ -53,7 +54,6 @@ module.exports = {
     new CopyWebpackPlugin([{
       from: './config.js'
     }]),
-    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
     new webpack.ProvidePlugin({
       'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
     })
