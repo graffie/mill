@@ -11,15 +11,13 @@
  */
 const webpack = require('webpack');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
   entry: './src/app.js',
   output: {
     filename: 'mill.min.js',
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, '.'),
     publicPath: './'
   },
   resolve: {
@@ -45,15 +43,6 @@ module.exports = {
       },
       '__DEVTOOLS__': false
     }),
-    new HtmlWebpackPlugin({
-      title: 'Mill blog',
-      filename: 'index.html',
-      template: path.resolve(__dirname, 'index.html')
-        // favicon: path.join(__dirname, 'assets', 'images', 'favicon.ico')
-    }),
-    new CopyWebpackPlugin([{
-      from: './config.js'
-    }]),
     new webpack.ProvidePlugin({
       'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
     })
