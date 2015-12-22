@@ -27,7 +27,7 @@
     <div id="mill"></div>
     <script src="./config.js" charset="utf-8"></script>
     {%  for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
-    <script typ="text/javascript" src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry%}"></script>
+    <script src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry%}"></script>
     {% } %}
   </body>
 </html>

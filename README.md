@@ -34,6 +34,6 @@ https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/
 
 
 ### LICENSE 
-This software is free to use under BSD license. See the [LICENSE file][] for license text and copyright information.
+This software is free to use under MIT license. See the [LICENSE file][] for license text and copyright information.
 
 [LICENSE file]: https://github.com/theorangeclock/mill/blob/master/LICENSE

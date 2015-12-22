@@ -53,7 +53,7 @@ module.exports = {
       '__DEVTOOLS__': true
     }),
     new HtmlWebpackPlugin({
-      title: 'Myanmar TRM',
+      title: 'Mill blog',
       filename: 'index.html',
       template: path.resolve(__dirname, 'index.html')
       // favicon: path.join(__dirname, 'assets', 'images', 'favicon.ico')
