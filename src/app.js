@@ -50,8 +50,13 @@ class App extends React.Component {
   render() {
     let props = Object.assign({}, this.state, {config: this.props.config});
     return (
-      <div className="mill-app">
-        {React.cloneElement(this.props.children, props)}
+      <div id="mill-app">
+        <div id="sidebar">
+          <h2 className="mill-title">
+            <a href="javascript:;">{this.props.config.title}</a>
+          </h2>
+        </div>
+        <main>{React.cloneElement(this.props.children, props)}</main>
       </div>
     );
   }
