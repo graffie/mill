@@ -40,9 +40,9 @@ export default class Detail extends React.Component {
 
   render() {
     return (
-      <div className="mill-detail">
+      <div className='mill-detail'>
         <h1>{this.state.post.title}</h1>
-        <div className="mill-detail-content">
+        <div className='mill-detail-content'>
           <div dangerouslySetInnerHTML={{__html: this.state.post.html}} />
         </div>
       </div>
