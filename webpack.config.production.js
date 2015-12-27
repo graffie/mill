@@ -1,7 +1,8 @@
-/*
+/**!
  * mill - webpack.config.production.js
- * Copyright(c) 2015 xeodou <xeodou@gmail.com>
- * MIT Licensed
+ *
+ * Authors:
+ *   xeodou <xeodou@gmail.com>
  */
 
 'use strict';

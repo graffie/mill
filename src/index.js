@@ -28,6 +28,11 @@ class ListItem extends React.Component {
 };
 
 export default class Index extends React.Component {
+
+  componentDidMount() {
+    document.title = this.props.config.title || 'Mill';
+  }
+
   render() {
     return (
       <div className='mill-index'>
