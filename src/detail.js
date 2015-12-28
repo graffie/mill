@@ -21,6 +21,7 @@ export default class Detail extends React.Component {
     this.state = {
       post: post
     };
+    document.title = post.title || '';
   }
 
   fetchPost(postId, posts) {
@@ -36,6 +37,7 @@ export default class Detail extends React.Component {
   componentWillReceiveProps(nextProps) {
     let post = this.fetchPost(nextProps.params.id, nextProps.posts);
     this.setState({post: post});
+    document.title = post.title || '';
   }
 
   render() {

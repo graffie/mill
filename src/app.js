@@ -29,6 +29,7 @@ class App extends React.Component {
       error: false,
       loading: true,
       posts: [],
+      appLogo: '',
     };
   }
 
@@ -37,6 +38,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    this.client.getUser().then(user => {
+      this.setState({appLogo: user.avatar_url});
+    });
     this.listPosts();
   }
 
@@ -52,9 +56,14 @@ class App extends React.Component {
     return (
       <div id='mill-app'>
         <div id='sidebar'>
-          <h2 className='mill-title'>
-            <a href='javascript:;'>{this.props.config.title}</a>
-          </h2>
+          <div id='sidebar-content'>
+            <a className='app-logo' href='/#/'>
+              <img src={this.state.appLogo} alt='{this.props.config.title}' />
+            </a>
+            <h2 className='app-title'>
+              <a href='/#/'>{this.props.config.title}</a>
+            </h2>
+          </div>
         </div>
         <main>{React.cloneElement(this.props.children, props)}</main>
       </div>

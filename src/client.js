@@ -77,6 +77,11 @@ Client.prototype.listPosts = function(args) {
   });
 };
 
+Client.prototype.getUser = function() {
+  let url = this.getUrl(`/users/${this.owner}`);
+  return this.request(url);
+};
+
 /**
  * Expose `Client`
  */
