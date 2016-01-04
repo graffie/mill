@@ -17,6 +17,28 @@ import Client from './client';
 import Index from './index';
 import Detail from './detail';
 
+class Sidebar extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div id='sidebar'>
+        <div id='sidebar-content'>
+          <a className='app-logo' href='/#/'>
+            <img src={this.props.appLogo} alt='{this.props.config.title}' />
+          </a>
+          <h2 className='app-title'>
+            <a href='/#/'>{this.props.config.title}</a>
+          </h2>
+        </div>
+      </div>
+    );
+  }
+};
+
 class App extends React.Component {
 
   static defaultProps = {
@@ -55,16 +77,7 @@ class App extends React.Component {
     let props = Object.assign({}, this.state, {config: this.props.config});
     return (
       <div id='mill-app'>
-        <div id='sidebar'>
-          <div id='sidebar-content'>
-            <a className='app-logo' href='/#/'>
-              <img src={this.state.appLogo} alt='{this.props.config.title}' />
-            </a>
-            <h2 className='app-title'>
-              <a href='/#/'>{this.props.config.title}</a>
-            </h2>
-          </div>
-        </div>
+        <Sidebar {...this.props} appLogo={this.state.appLogo} />
         <main>{React.cloneElement(this.props.children, props)}</main>
       </div>
     );

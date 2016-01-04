@@ -14,6 +14,11 @@ import React from 'react';
 import { Link } from 'react-router';
 
 class ListItem extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <article className='post'>
@@ -28,6 +33,10 @@ class ListItem extends React.Component {
 };
 
 export default class Index extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
 
   componentDidMount() {
     document.title = this.props.config.title || 'Mill';
