@@ -47,6 +47,7 @@ export default class Index extends React.Component {
       <div className='mill-index'>
         <div className='posts'>
         {this.props.loading ? 'Loading posts' : ''}
+        {this.props.error ? 'Error occurred' : ''}
         {this.props.posts.map((post, i) => {
           return <ListItem key={post.id} {...post} />;
         })}

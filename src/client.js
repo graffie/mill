@@ -42,14 +42,13 @@ Client.prototype.request = function(url, args) {
     .then(res => {
       if (res.status < 200 || res.status >= 300) {
         let err = new Error(res.statusText);
+        err.name = 'GitHubReqError';
         err.response = res;
         throw err;
       }
       return res;
     }).then(res => {
       return res.json();
-    }).catch(err => {
-      throw err;
     });
 };
 

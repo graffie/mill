@@ -23,13 +23,23 @@ class Sidebar extends React.Component {
     super(props);
   }
 
+  renderAppLogo() {
+    if (!this.props.appLogo) {
+      return '';
+    }
+    const alt = this.props.config.title || '';
+    return (
+      <a className='app-logo' href='/#/'>
+        <img src={this.props.appLogo} alt='{alt}' />
+      </a>
+    );
+  }
+
   render() {
     return (
       <div id='sidebar'>
         <div id='sidebar-content'>
-          <a className='app-logo' href='/#/'>
-            <img src={this.props.appLogo} alt='{this.props.config.title}' />
-          </a>
+          {this.renderAppLogo()}
           <h2 className='app-title'>
             <a href='/#/'>{this.props.config.title}</a>
           </h2>
@@ -62,6 +72,8 @@ class App extends React.Component {
   componentDidMount() {
     this.client.getUser().then(user => {
       this.setState({appLogo: user.avatar_url});
+    }).catch(err => {
+      console.error(err.stack);
     });
     this.listPosts();
   }
@@ -70,6 +82,9 @@ class App extends React.Component {
     let res = this.client.listPosts();
     res.then(posts => {
       this.setState({error: false, loading: false, posts: posts});
+    }).catch(err => {
+      this.setState({error: true, loading: false});
+      console.error(err.stack);
     });
   }
 
