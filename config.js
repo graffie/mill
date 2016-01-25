@@ -1,7 +1,7 @@
 window.MillConfig = {
-  title: 'theorangeclock.github.io',
+  title: 'Mill',
   github: {
-    owner: 'theorangeclock',
-    repo: 'theorangeclock.github.io'
-  }
+    owner: 'graffie',
+    repo: 'mill.blog',
+  },
 };

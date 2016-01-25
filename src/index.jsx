@@ -1,38 +1,29 @@
-/**!
+/*
  * mill - src/index.js
  *
  * Authors:
  *   rockdai <rockdai@qq.com>
  */
 
-'use strict';
-
 /**
  * Module dependencies.
  */
 import React from 'react';
-import { Link } from 'react-router';
-
-class ListItem extends React.Component {
-
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <article className='post'>
-        <header className='post-head'>
-          <h1 className='post-title'>
-            <Link to={'/post/' + this.props.id}>{this.props.title}</Link>
-          </h1>
-        </header>
-      </article>
-    )
-  }
-};
+import IndexListItem from './components/IndexListItem';
 
 export default class Index extends React.Component {
+
+  static propTypes = {
+    config: React.PropTypes.object,
+    loading: React.PropTypes.bool,
+    error: React.PropTypes.bool,
+    posts: React.PropTypes.array,
+  };
+
+  static defaultProps = {
+    loading: true,
+    error: false,
+  };
 
   constructor(props) {
     super(props);
@@ -44,15 +35,15 @@ export default class Index extends React.Component {
 
   render() {
     return (
-      <div className='mill-index'>
-        <div className='posts'>
+      <div className="mill-index">
+        <div className="posts">
         {this.props.loading ? 'Loading posts' : ''}
         {this.props.error ? 'Error occurred' : ''}
-        {this.props.posts.map((post, i) => {
-          return <ListItem key={post.id} {...post} />;
+        {this.props.posts.map(post => {
+          return <IndexListItem key={post.id} {...post} />;
         })}
         </div>
       </div>
     );
   }
-};
+}
