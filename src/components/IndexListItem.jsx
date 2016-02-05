@@ -51,5 +51,5 @@ export default class ListItem extends React.Component {
 function strip(html) {
    const tmp = document.createElement('DIV');
    tmp.innerHTML = html;
-   return (tmp.textContent || tmp.innerText || '').replace(/\r?\n|\r/g, '');
+   return (tmp.textContent || tmp.innerText || '').replace(/\r?\n|\r/g, ' ');
 }

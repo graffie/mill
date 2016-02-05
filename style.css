@@ -25,7 +25,7 @@ a {
 h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
   line-height: 1;
-  margin-top: 0;
+  /*margin-top: 0;*/
 }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   color: #22313F;
@@ -44,6 +44,11 @@ h2 {
 }
 p, ul, ol, dl {
     margin: 1.6em 0;
+}
+.hidden {
+  text-indent: -9999px;
+  visibility: hidden;
+  display: none;
 }
 #mill-app #sidebar {
   position: fixed;
@@ -140,7 +145,7 @@ p, ul, ol, dl {
   text-decoration: none;
 }
 #mill-app main .mill-index .post .post-excerpt p {
-  max-height: 800px;
+  max-height: 200px;
   overflow: hidden;
 }
 .post-meta {
@@ -160,6 +165,85 @@ p, ul, ol, dl {
   font-size: 0.9em;
   line-height: 1.6em;
 }
+figure {
+  margin: 0;
+}
+.author-image {
+    float: left;
+    margin-right: 12px;
+    margin-bottom: 20px;
+}
+.post-footer {
+  position: relative;
+  margin: 4rem 0 4rem 0;
+  padding: 4rem 0 0 0;
+  border-top: #EBF2F6 1px solid;
+  border-bottom: #EBF2F6 1px solid;
+}
+.post-footer .author-image {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  margin-left: -40px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  overflow: hidden;
+  padding: 6px;
+  background: #fff;
+  z-index: 2;
+  box-shadow: #E7EEF2 0 0 0 1px;
+}
+.post-footer .author-image .img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+    border-radius: 100%;
+}
+.post-footer .author {
+    margin-right: 180px;
+}
+.post-footer .author-meta {
+  padding: 0;
+  margin: 1.6rem 0;
+  list-style: none;
+  font-size: 1.4rem;
+  line-height: 1;
+  font-style: italic;
+  color: #9EABB3;
+}
+.post-footer .author-meta i {
+  display: inline-block;
+  margin: 0 2rem 1rem 0;
+  word-wrap: break-word;
+}
+.post-footer .author-meta a {
+  margin-left: 1rem;
+}
+.post-footer .share {
+  position: absolute;
+  top: 4rem;
+  right: 0;
+  width: 180px;
+  text-align: center;
+}
+.post-footer .share a.fa:first-child {
+    margin-left: 0;
+}
+.post-footer .share a {
+  font-size: 3rem;
+  display: inline-block;
+  margin: 1rem 1.6rem 1.6rem 0;
+  color: #BBC7CC;
+  text-decoration: none;
+}
 @media only screen and (max-width: 500px) {
   #mill-app main {
     padding: 40px 12px;
@@ -174,6 +258,9 @@ p, ul, ol, dl {
   }
   h2 {
     font-size: 2.0rem;
+  }
+  code {
+    word-break: break-word;
   }
 }
 @media (max-width: 1023px) {
