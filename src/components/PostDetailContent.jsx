@@ -21,8 +21,15 @@ export default class Detail extends React.Component {
   }
 
   render() {
+    const createdAt = this.props.post.createdAt;
     return (
       <div className="mill-detail-content">
+        <section className="post-meta">
+          <span className="post-time">
+            <i className="fa fa-calendar"></i>
+            <time dateTime="{createdAt ? createdAt.toJSON() : ''}" className="fulldate">{createdAt ? createdAt.toDateString() : ''}</time>
+          </span>
+        </section>
         <div dangerouslySetInnerHTML={{ __html: this.props.post.html }} />
       </div>
     );

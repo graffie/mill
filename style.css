@@ -3,7 +3,7 @@ body {
   height: 100%;
   width: 100%;
   font-size: 62.5%;
-  font-family: sans-serif;
+  font-family: 'Open Sans',sans-serif;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
@@ -37,10 +37,13 @@ h1 {
   text-indent: -3px;
 }
 h2 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   line-height: 1.2em;
   letter-spacing: -1px;
   text-indent: -2px;
+}
+p, ul, ol, dl {
+    margin: 1.6em 0;
 }
 #mill-app #sidebar {
   position: fixed;
@@ -58,6 +61,15 @@ h2 {
   top: 4rem;
   width: 80%;
   margin: 0 auto;
+}
+#mill-app #sidebar-content .site-footer {
+  position: fixed;
+  bottom: 0px;
+  margin: 1rem auto;
+  max-width: inherit;
+  font-size: 1.3rem;
+  line-height: 1.7em;
+  color: #e6e9eb;
 }
 #mill-app #sidebar .app-logo img {
   display: block;
@@ -92,12 +104,12 @@ h2 {
   right: 0px;
   top: 0px;
   bottom: 0px;
-  padding: 4rem 15%;
+  padding: 4rem 10%;
 }
-#main-app main .main-index {
-  max-width: 800px;
+#mill-app main>div{
+    max-width: 800px;
 }
-#main-app main .main-index .post {
+#mill-app main .mill-index .post {
   position: relative;
   max-width: inherit;
   border-bottom: #EBF2F6 1px solid;
@@ -105,11 +117,94 @@ h2 {
   hyphens: auto;
   margin-bottom: 2rem;
 }
-#main-app main .main-index .post-title {
-  margin: 0;
-  color: #222;
+#mill-app main .mill-index .post:after {
+  display: block;
+  content: "";
+  width: 7px;
+  height: 7px;
+  border: #E7EEF2 1px solid;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  margin-left: -5px;
+  background: #fff;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  box-shadow: #fff 0 0 0 5px;
 }
-#main-app main .main-index .post-title a {
+.post-title {
+  margin: 0;
+}
+.post-title a {
   text-decoration: none;
+}
+#mill-app main .mill-index .post .post-excerpt p {
+  max-height: 800px;
+  overflow: hidden;
+}
+.post-meta {
+  display: inline-block;
+  margin: 8px 0;
+  font-size: 14px;
+  line-height: 1.4em;
+  color: #9EABB3;
+}
+.post-meta i {
+  width: 18px;
+  font-size: 14px;
+}
+.mill-detail-content p,
+.post-excerpt p {
+  margin: 0.9rem 0 0 0;
+  font-size: 0.9em;
+  line-height: 1.6em;
+}
+@media only screen and (max-width: 500px) {
+  #mill-app main {
+    padding: 40px 12px;
+  }
+  .mill-detail-content {
+    width: auto;
+  }
+  h1, h2 {
+    font-size: 2.4rem;
+    line-height: 1.1em;
+    letter-spacing: -1px;
+  }
+  h2 {
+    font-size: 2.0rem;
+  }
+}
+@media (max-width: 1023px) {
+  #mill-app #sidebar {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    padding: 16px 0px;
+  }
+  #mill-app #sidebar-content {
+    position: relative:;
+    top: 0px;
+  }
+  #mill-app #sidebar-content .site-footer {
+    position: relative;
+    margin: auto auto;
+  }
+  #mill-app main {
+    position: relative;
+    left: 0px;
+  }
+  .mill-detail-content {
+    width: 100%;
+    font-size: 0.9em;
+    line-height: 1.6em;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  main {
+    padding: 40px 8%;
+  }
 }
 
