@@ -53,6 +53,7 @@ export default class Client {
       id: post.id,
       number: post.number,
       html: post.body_html,
+      ghLink: post.html_url,
       title: post.title,
       createdAt: new Date(post.created_at),
       updatedAt: new Date(post.updated_at),
@@ -60,6 +61,7 @@ export default class Client {
         id: post.user.id,
         avatar: post.user.avatar_url,
         login: post.user.login,
+        ghLink: post.user.html_url
       },
     };
   }

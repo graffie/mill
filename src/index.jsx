@@ -33,13 +33,24 @@ export default class Index extends React.Component {
     document.title = this.props.config.title || 'Mill';
   }
 
+  filter() {
+    let posts = this.props.posts;
+    const { query } = this.props.location;
+    const author = query && query.author ? query.author : '';
+    if (author.replace(/\ /g) !== '') {
+      return posts.filter(i => i.user.login === author);
+    }
+    return posts;
+  }
+
   render() {
+
     return (
       <div className="mill-index">
         <div className="posts">
         {this.props.loading ? 'Loading posts' : ''}
         {this.props.error ? 'Error occurred' : ''}
-        {this.props.posts.map(post => {
+        {this.filter().map(post => {
           return <IndexListItem key={post.id} {...post} />;
         })}
         </div>

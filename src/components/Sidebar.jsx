@@ -40,6 +40,9 @@ export default class Sidebar extends React.Component {
           <h2 className="app-title">
             <a href="/#/">{this.props.config.title}</a>
           </h2>
+          <footer className="site-footer">
+            <section className="copyright">© {(new Date()).getUTCFullYear() + ' ' + this.props.config.title} • All rights reserved.</section>
+          </footer>
         </div>
       </div>
     );
