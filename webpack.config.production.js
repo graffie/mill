@@ -1,4 +1,4 @@
-/**!
+/**
  * mill - webpack.config.production.js
  *
  * Authors:
@@ -19,10 +19,10 @@ module.exports = {
   output: {
     filename: 'mill.min.js',
     path: path.join(__dirname, '.'),
-    publicPath: './'
+    publicPath: './',
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
   },
   module: {
     loaders: [{
@@ -32,7 +32,7 @@ module.exports = {
       query: {
         presets: ['react', 'es2015', 'stage-0'],
       },
-    }]
+    }],
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -40,12 +40,12 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('production')
+        NODE_ENV: JSON.stringify('production'),
       },
-      '__DEVTOOLS__': false
+      __DEVTOOLS__: false,
     }),
     new webpack.ProvidePlugin({
-      'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
-    })
-  ]
+      fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch',
+    }),
+  ],
 };
