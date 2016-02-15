@@ -1,4 +1,4 @@
-/**!
+/**
  * mill - webpack.config.js
  *
  * Authors:
@@ -19,16 +19,16 @@ module.exports = {
     app: [
       'webpack-dev-server/client?http://localhost:4000',
       'webpack/hot/only-dev-server',
-      path.resolve(__dirname, './src/app')
-    ]
+      path.resolve(__dirname, './src/app'),
+    ],
   },
   output: {
     filename: 'mill.min.js',
     path: path.join(__dirname, '.'),
-    publicPath: 'http://localhost:4000/assets/'
+    publicPath: 'http://localhost:4000/assets/',
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
   },
   module: {
     loaders: [{
@@ -45,16 +45,16 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
-      warning: false
+      warning: false,
     }),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('development')
+        NODE_ENV: JSON.stringify('development'),
       },
-      '__DEVTOOLS__': true
+      __DEVTOOLS__: true,
     }),
     new webpack.ProvidePlugin({
-      'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
-    })
-  ]
+      fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch',
+    }),
+  ],
 };
