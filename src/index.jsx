@@ -38,7 +38,10 @@ export default class Index extends React.Component {
     const { query } = this.props.location;
     const author = query && query.author ? query.author : '';
     if (author.replace(/\ /g) !== '') {
-      return posts.filter(i => i.user.login === author);
+      posts = posts.filter(i => i.user.login === author);
+    }
+    if (query && query.tag) {
+      posts = posts.filter(i => ~i.tags.indexOf(query.tag));
     }
     return posts;
   }

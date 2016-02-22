@@ -63,6 +63,7 @@ export default class Client {
         login: post.user.login,
         ghLink: post.user.html_url
       },
+      tags: post.labels.map(l => l.name).filter(n => !n.startsWith('_'))
     };
   }
 

@@ -10,7 +10,7 @@
  */
 import React from 'react';
 
-export default class Detail extends React.Component {
+export default class ShareButton extends React.Component {
   static propTypes = {
     publisher: React.PropTypes.string,
     url: React.PropTypes.string,
