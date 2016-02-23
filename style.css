@@ -22,6 +22,10 @@ a {
   text-decoration: none;
   background: transparent;
 }
+a:hover {
+  border-bottom-width: 0px;
+  border-bottom-style: solid;
+}
 h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
   line-height: 1;
@@ -134,7 +138,7 @@ pre {
   padding: 4rem 10%;
 }
 #mill-app main>div{
-    max-width: 800px;
+  max-width: 800px;
 }
 #mill-app main .mill-index .post {
   position: relative;
@@ -166,6 +170,10 @@ pre {
 .post-title a {
   text-decoration: none;
 }
+.post-title a:hover {
+  border-bottom-width: 3px;
+  border-bottom-color: #22313F;
+}
 #mill-app main .mill-index .post .post-excerpt p {
   max-height: 200px;
   overflow: hidden;
@@ -186,6 +194,10 @@ pre {
   color: #9EABB3;
   text-decoration: none;
   font-size: 14px;
+}
+.post-meta a:hover {
+  border-bottom-width: 1px;
+  border-bottom-color: #9EABB3;
 }
 .post-meta .post-item-tags {
   margin-bottom: 0px;
