@@ -33,15 +33,19 @@ export default class Sidebar extends React.Component {
   }
 
   render() {
+    const currentYear = new Date().getUTCFullYear();
+    const copyright = `${currentYear} ${this.props.config.title}`;
     return (
       <div id="sidebar">
         <div id="sidebar-content">
           {this.renderAppLogo()}
           <h2 className="app-title">
-            <a href="/#/">{this.props.config.title}</a>
+            <a href="#/">{this.props.config.title}</a>
           </h2>
           <footer className="site-footer">
-            <section className="copyright">© {(new Date()).getUTCFullYear() + ' ' + this.props.config.title} • All rights reserved.</section>
+            <section className="copyright">
+              &copy; {copyright}. All rights reserved.
+            </section>
           </footer>
         </div>
       </div>
