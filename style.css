@@ -23,7 +23,7 @@ a {
   background: transparent;
 }
 a:hover {
-  border-bottom-width: 1px;
+  border-bottom-width: 0px;
   border-bottom-style: solid;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -196,6 +196,7 @@ pre {
   font-size: 14px;
 }
 .post-meta a:hover {
+  border-bottom-width: 1px;
   border-bottom-color: #9EABB3;
 }
 .post-meta .post-item-tags {
