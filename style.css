@@ -180,6 +180,16 @@ pre {
 .post-meta i {
   width: 18px;
   font-size: 14px;
+  margin-right: 4px;
+}
+.post-meta a {
+  color: #9EABB3;
+  text-decoration: none;
+  font-size: 14px;
+}
+.post-meta .post-item-tags {
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 .mill-detail-content p,
 .post-excerpt p {

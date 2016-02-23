@@ -10,6 +10,7 @@
  */
 import React from 'react';
 import { Link } from 'react-router';
+import Tag from './Tag';
 
 export default class ListItem extends React.Component {
 
@@ -36,6 +37,7 @@ export default class ListItem extends React.Component {
             <span className='post-meta'>
               <i className='fa fa-calendar'></i>
               <time className='post-item-time' dateTime={createdAt.toJSON()}>{createdAt.toDateString()}</time>
+              <Tag tags={this.props.tags}></Tag>
             </span>
           </aside>
           <section className='post-excerpt'>

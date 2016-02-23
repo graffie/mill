@@ -11,6 +11,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import ShareButton from './ShareButton';
+import Tag from './Tag';
 
 export default class Detail extends React.Component {
 
@@ -35,6 +36,7 @@ export default class Detail extends React.Component {
             <i className="fa fa-calendar"></i>
             <time dateTime="{createdAt ? createdAt.toJSON() : ''}" className="fulldate">{createdAt ? createdAt.toDateString() : ''}</time>
           </span>
+          <Tag tags={this.props.post.tags}></Tag>
         </section>
         <div dangerouslySetInnerHTML={{ __html: this.props.post.html }} />
         <footer className="post-footer">
