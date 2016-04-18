@@ -4,4 +4,5 @@ window.MillConfig = {
     owner: 'graffie',
     repo: 'mill.blog',
   },
+  theme: 'basic'
 };
