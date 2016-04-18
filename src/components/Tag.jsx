@@ -21,16 +21,7 @@ export default class Tag extends React.Component {
   };
 
   render() {
-    const tags = this.props.tags.map((t, i)=> {
-      const comma = i !== this.props.tags.length - 1 ? <span>, </span> : '';
-      return <Link key={i} to='/' query={{tag: t}}>{t}{comma}</Link>;
-    });
-
-    return (
-      <p className='post-item-tags'>
-        <i className='fa fa-tags'></i>
-        {tags}
-      </p>
-    );
+    const {theme, tags} = this.props;
+    return theme(React, {tags, Link});
   }
 }

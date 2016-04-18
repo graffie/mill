@@ -25,6 +25,7 @@ class App extends React.Component {
 
   static defaultProps = {
     config: window.MillConfig,
+    theme: __webpack_require__(`themes/${window.MillConfig.theme}`)
   };
 
   constructor(props) {
@@ -61,7 +62,7 @@ class App extends React.Component {
   }
 
   render() {
-    const props = Object.assign({}, this.state, { config: this.props.config });
+    const props = Object.assign({}, this.state, { config: this.props.config, theme: this.props.theme});
     return (
       <div id="mill-app">
         <Sidebar {...this.props} appLogo={this.state.appLogo} />
@@ -69,7 +70,6 @@ class App extends React.Component {
       </div>
     );
   }
-
 }
 
 render((
