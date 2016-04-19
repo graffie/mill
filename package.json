@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "Yet another blog system.",
   "scripts": {
+    "cname": "echo $1 > CNAME",
     "clean": "rm -f mill.min.*",
     "prebuild": "npm run clean",
     "build": "./node_modules/.bin/webpack --progress --colors",
@@ -10,7 +11,7 @@
     "predist": "npm run clean",
     "dist": "webpack --progress --colors --config webpack.config.production.js",
     "predeploy": "npm run dist",
-    "deploy": "./node_modules/.bin/gh-pages --dist . --src '?(index.html|mill.min.js|vendor.bundle.js|config.js|style.css)'",
+    "deploy": "./node_modules/.bin/gh-pages --dist . --src '?(CNAME|index.html|mill.min.js|vendor.bundle.js|config.js|style.css)'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

@@ -3,3 +3,4 @@ node_modules
 mill.min.*
 vendor.bundle.*
 npm-debug.log
+CNAME
