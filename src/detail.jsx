@@ -44,9 +44,8 @@ export default class Detail extends React.Component {
 
   render() {
     return (
-      <div className="mill-detail">
-        <h1 className='post-title'>{this.state.post.title}</h1>
-        <PostDetailContent post={this.state.post} />
+      <div>
+        <PostDetailContent post={this.state.post} theme={this.props.theme} />
       </div>
     );
   }

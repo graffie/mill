@@ -54,7 +54,7 @@ export default class Index extends React.Component {
         {this.props.loading ? 'Loading posts' : ''}
         {this.props.error ? 'Error occurred' : ''}
         {this.filter().map(post => {
-          return <IndexListItem key={post.id} {...post} />;
+          return <IndexListItem key={post.id} {...post} theme={this.props.theme} />;
         })}
         </div>
       </div>

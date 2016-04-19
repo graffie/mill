@@ -21,6 +21,7 @@ module.exports = {
       'webpack/hot/only-dev-server',
       path.resolve(__dirname, './src/app'),
     ],
+    vendor: ["history", "qs", "react", "react-dom","react-router","whatwg-fetch"]
   },
   output: {
     filename: 'mill.min.js',
@@ -28,7 +29,7 @@ module.exports = {
     publicPath: 'http://localhost:4000/assets/',
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx']
   },
   module: {
     loaders: [{
@@ -38,11 +39,13 @@ module.exports = {
       query: {
         presets: ['react', 'es2015', 'stage-0'],
       },
-    }],
+    }]
   },
   plugins: [
+    new webpack.IgnorePlugin(/themes/),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
+    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js"),
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
       warning: false,

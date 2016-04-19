@@ -11,6 +11,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Tag from './Tag';
+import inject from '../inject';
 
 export default class ListItem extends React.Component {
 
@@ -25,28 +26,15 @@ export default class ListItem extends React.Component {
 
   render() {
     const createdAt = this.props.createdAt;
-    return (
-      <article className='post'>
-        <header className='post-head'>
-          <h1 className='post-title'>
-            <Link to={`/post/${this.props.id}`}>{this.props.title}</Link>
-          </h1>
-        </header>
-        <div className='post-preview'>
-          <aside className='col-aside'>
-            <span className='post-meta'>
-              <i className='fa fa-calendar'></i>
-              <time className='post-item-time' dateTime={createdAt.toJSON()}>{createdAt.toDateString()}</time>
-              <Tag tags={this.props.tags}></Tag>
-            </span>
-          </aside>
-          <section className='post-excerpt'>
-            <p>{strip(this.props.html)}</p>
-            <Link className='btn' to={`/post/${this.props.id}`}>Read More</Link>
-          </section>
-        </div>
-      </article>
-    );
+    const { theme } = this.props;
+    const post = {
+      id: this.props.id,
+      title: this.props.title,
+      sumary: strip(this.props.html),
+      tags: this.props.tags,
+      createdAt
+    }
+    return theme.articleListItem(React, { post, Tag: inject(Tag, theme.tag), Link });
   }
 }
 

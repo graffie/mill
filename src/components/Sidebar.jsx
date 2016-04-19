@@ -21,34 +21,12 @@ export default class Sidebar extends React.Component {
     super(props);
   }
 
-  renderAppLogo() {
-    if (!this.props.appLogo) {
-      return '';
-    }
-    return (
-      <a className="app-logo" href="/#/">
-        <img src={this.props.appLogo} alt="{this.props.config.title || ''}" />
-      </a>
-    );
-  }
-
   render() {
+    const {theme} = this.props;
     const currentYear = new Date().getUTCFullYear();
     const copyright = `${currentYear} ${this.props.config.title}`;
-    return (
-      <div id="sidebar">
-        <div id="sidebar-content">
-          {this.renderAppLogo()}
-          <h2 className="app-title">
-            <a href="#/">{this.props.config.title}</a>
-          </h2>
-          <footer className="site-footer">
-            <section className="copyright">
-              &copy; {copyright}. All rights reserved.
-            </section>
-          </footer>
-        </div>
-      </div>
-    );
+    const logo = this.props.appLogo;
+    const title = this.props.config.title;
+    return theme.sideBar(React, {logo, title, copyright})
   }
 }

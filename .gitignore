@@ -1,4 +1,5 @@
 node_modules
 .DS_Store
 mill.min.*
+vendor.bundle.*
 npm-debug.log

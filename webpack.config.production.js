@@ -15,7 +15,10 @@ const path = require('path');
 
 module.exports = {
   devtool: 'source-map',
-  entry: './src/app.jsx',
+  entry: {
+    app: './src/app.jsx',
+    vendor: ["history", "qs", "react", "react-dom","react-router","whatwg-fetch"]
+  },
   output: {
     filename: 'mill.min.js',
     path: path.join(__dirname, '.'),
@@ -35,8 +38,9 @@ module.exports = {
     }],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    new webpack.IgnorePlugin(/themes/),
     new webpack.NoErrorsPlugin(),
+    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js"),
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
