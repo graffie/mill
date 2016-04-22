@@ -1,6 +1,6 @@
 ![mill](http://keydiary-assets.stor.sinaapp.com/mill-logo.png)
 
-Yet another lightweight article system, based on `GitHub`.
+Lightest, themable article system, based on `GitHub`.
 
 ### How to
 
@@ -18,12 +18,18 @@ The format is following this
     github: {                            
       owner: 'theorangeclock',
       repo: 'theorangeclock.github.io'
-    }
+    }，
+    theme: 'basic'
 }
 ```
 * Open `https://your_github_name.github.io/mill` you will see your awesome blog.
 * If you want add custom domain for your blog , please check 
 https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/
+
+#### Change themes
+
+See [wiki](https://github.com/graffie/mill/wiki/Mill-themes)
+
 
 #### Development
 
